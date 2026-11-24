@@ -8,24 +8,24 @@ public record Transaction(
         int step,
         TransactionType type,
         BigDecimal amount,
-        Customer origin,
-        Customer destination,
+        TransactionCustomer origin,
+        TransactionCustomer destination,
         boolean isFraud,
         boolean isFlaggedFraud
 ) {
 
     @Override
     public String toString() {
-        return "step: " + step + "\n" +
-                "type: " + type + "\n" +
-                "amount: " + amount + "\n" +
-                "nameOrig: " + origin.name() + "\n" +
-                "oldbalanceOrg: " + origin.oldBalance() + "\n" +
-                "newbalanceOrig: " + origin.newBalance() + "\n" +
-                "nameDest: " + destination.name() + "\n" +
-                "oldbalanceDest: " + destination.oldBalance() + "\n" +
-                "newbalanceDest: " + destination.newBalance() + "\n" +
-                "isFraud: " + (isFraud ? 1 : 0) + "\n" +
+        return "step: " + step + "," +
+                "type: " + type + "," +
+                "amount: " + amount + "," +
+                "nameOrig: " + origin.name() + "," +
+                "oldbalanceOrg: " + origin.oldBalance() + "," +
+                "newbalanceOrig: " + origin.newBalance() + "," +
+                "nameDest: " + destination.name() + "," +
+                "oldbalanceDest: " + destination.oldBalance() + "," +
+                "newbalanceDest: " + destination.newBalance() + "," +
+                "isFraud: " + (isFraud ? 1 : 0) + "," +
                 "isFlaggedFraud: " + (isFlaggedFraud ? 1 : 0);
     }
 }
